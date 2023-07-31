@@ -240,8 +240,8 @@ Rscript filter_CREs.R --input_bed=mouseE8.25_peaks.bed --annot=/g/data/zk16/cc37
     vignette('accessing_ensembl', package = 'biomaRt')Error in curl::curl_fetch_memory(url, handle = handle) : 
       SSL certificate problem: certificate has expired
     
-    [?25h[?25hReading CREs...
-    [?25h[?25h[?25hReading genome annotation...
+    Reading CREs...
+    Reading genome annotation...
     Import genomic features from the file as a GRanges object ... OK
     Prepare the 'metadata' data frame ... OK
     Make the TxDb object ... OK
@@ -251,11 +251,11 @@ Rscript filter_CREs.R --input_bed=mouseE8.25_peaks.bed --annot=/g/data/zk16/cc37
     In .get_cds_IDX(mcols0$type, mcols0$phase) :
       The "phase" metadata column contains non-NA values for features of type
       stop_codon. This information was ignored.
-    [?25hReading chromosome sizes...
+    Reading chromosome sizes...
     Adjusting CRE length...
-    [?25hSaving CREs...
-    [?25h[?25h[?25hDone
-    [?25h[?25h
+    Saving CREs...
+    Done
+    
 
 After filtering, we can see the number of CRE remaining per cell type.
 
@@ -385,7 +385,7 @@ Next, we are going to create the matrix of motif counts for binary classificatio
 Rscript matrix_for_binary_model.R --help
 ```
 
-    [?25h[?25h[?25h[?25h[?25hUsage: Rscript matrix_for_binary_model.R [options]
+    Usage: Rscript matrix_for_binary_model.R [options]
     
     Options:
       --target_ct=<target_cell_type>    Name of the target cell type
@@ -393,7 +393,7 @@ Rscript matrix_for_binary_model.R --help
       --qval_thresh=<qvalue_threshold> Q-value threshold for filtering
       --out_filename=<output_filename> Name for the output file
       --help                           Display this help message
-    [?25h
+    
 
 We will generate a matrix to distinguish cardiomyocyte-specific CRE from  CRE specific to other cell types. For this, we will call the script with the argument --target_ct=Cardiomyocytes, indicating that Cardiomyocytes CRE are the target class. We will set a q-value cuttoff of 0.5 to filter motif instances (parameter --qval_thresh). We indicate the path to the output of the motif search with the parameter --data_path. Finally, we set a file name to store the matrix of motif counts (--out_filename). 
 
@@ -403,14 +403,14 @@ Rscript matrix_for_binary_model.R --target_ct=Cardiomyocytes \
 --data_path=./mouseE8.25_motifs --qval_thresh=0.5 --out_filename=Cardiomyocytes_vs_other_counts.txt
 ```
 
-    [?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25hReading data...
-    [?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25hSaving matrix of motif counts for binary classification...
-    [?25h[?25hContent of output table:
-    [?25h[?25h[?25h  Context Number of elements
+    Reading data...
+    Saving matrix of motif counts for binary classification...
+    Content of output table:
+      Context Number of elements
     1       0                864
     2       1                869
-    [?25h
-    [?25h[?25h
+    
+    
 
 In the output matrix, every CRE will be represented by a row and columns represent different motifs. The last 2 columns contain the cell type annotation, "celltype" contains the actual cell type name and "binary_celltype" contains the cell tipy coded as a binary, 1 represents cardiomyocyte CRE and 0 represents background CRE.
 
@@ -451,7 +451,7 @@ After building the matrix of motif counts we are ready to train a model. For thi
 Rscript train_binary.R --help
 ```
 
-    [?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25hUsage: Rscript training_binary.R [options]
+    Usage: Rscript training_binary.R [options]
     Options:
     --input_data=<file>		Path to the input matrix of motif counts (required)
     --data=<data>			The training data (default: dtrain)
@@ -483,10 +483,10 @@ To train the model, we provide the path to the matrix of motif counts to the arg
 Rscript train_binary.R --input_data=Cardiomyocytes_vs_other_counts.txt --save_name=Cardiomyocytes_vs_other.rds --early_stopping_rounds=100 --print_every_n=100 --nthread=4
 ```
 
-    [?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25hReading data...
-    [?25h[?25h[?25h[?25h[?25h[?25hSplitting data into training, validation and test sets...
-    [?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25hTraining model...
-    [?25h[?25h[1]	train-error:0.149182	validation-error:0.195965 
+    Reading data...
+    Splitting data into training, validation and test sets...
+    Training model...
+    [1]	train-error:0.149182	validation-error:0.195965 
     Multiple eval metrics are present. Will use validation_error for early stopping.
     Will train until validation_error hasn't improved in 100 rounds.
     
@@ -497,9 +497,9 @@ Rscript train_binary.R --input_data=Cardiomyocytes_vs_other_counts.txt --save_na
     Stopping. Best iteration:
     [395]	train-error:0.014437	validation-error:0.031700
     
-    [?25hSaving model...
-    [?25h[?25hDone
-    [?25h[?25h
+    Saving model...
+    Done
+    
 
 The script will split the data set into 60%, 20% and 20% CRE for training, validation and test. 
 
@@ -532,14 +532,14 @@ head Cardiomyocytes_vs_other_pred.txt
 
 ```
 
-    [?25h[?25h[?25h[?25h[?25h[?25h[?25hReading model...
-    [?25h[?25h[1] TRUE
-    [?25hBest tree: 395 
-    [?25hReading data...
-    [?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25hSaving training set...
-    [?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25hSaving predicted values...
-    [?25h[?25hDone
-    [?25h[?25htrue_class predicted_class prob
+    Reading model...
+    [1] TRUE
+    Best tree: 395 
+    Reading data...
+    Saving training set...
+    Saving predicted values...
+    Done
+    true_class predicted_class prob
     10:100164375-100164875 0 0 0.0236886981874704
     10:110994762-110995262 0 1 0.6538205742836
     10:111550213-111550713 0 0 0.23369137942791
@@ -562,14 +562,13 @@ Rscript binary_stats.R --input_file=Cardiomyocytes_vs_other_pred.txt
 ```
 
     Loading packages...
-    [?25h[1] "Cardiomyocytes_vs_other_pred.txt"
-    [?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25hauROC: 0.9938 
-    [?25hauPR: 0.9943 
-    [?25hAccuracy: 0.9597 
-    [?25hF1 score: 0.96 
-    [?25hRecall: 0.96 
-    [?25hPrecision: 0.96 
-    [?25h[?25h
+    auROC: 0.9938 
+    auPR: 0.9943 
+    Accuracy: 0.9597 
+    F1 score: 0.96 
+    Recall: 0.96 
+    Precision: 0.96 
+    
 
 ## Visualize predictions
 
@@ -646,7 +645,7 @@ my_theme <-  theme(panel.border = element_blank(), panel.grid.major = element_bl
 p <- ggplot(curve, aes(x = recall, y = precision)) +
   geom_path(color="#B39EB5", size = 1) +   my_theme +
   labs(y= "Precision", x = "Recall") + coord_equal()
-#  scale_colour_manual(values=) + #, aesthetics = c("colour", "fill"))
+
 
 p
 
