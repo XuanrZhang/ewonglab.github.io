@@ -473,7 +473,7 @@ Rscript train_binary.R --help
     --save_name=<file>		Name of the saved model file (default: xgboost.model)
     --help                    Display this help message
     
-    [?25h
+    
 
 To train the model, we provide the path to the matrix of motif counts to the argument --input_data and a name for the output model to --save_name. In this example we are going to set --early_stopping_rounds to 100 so that the model stops training is the error in prediction does not decrease after 100 iterations.
 
@@ -513,7 +513,7 @@ After training the model, we can run predictions on the test set, which is a set
 Rscript predict_binary.R --help
 ```
 
-    [?25h[?25h[?25h[?25h[?25hUsage: Rscript xgboost_predictions.R [parameters]
+    Usage: Rscript xgboost_predictions.R [parameters]
     
     Parameters:
     --input_data=<file>       Path to the input data file
@@ -522,7 +522,7 @@ Rscript predict_binary.R --help
     --training_set=<file>     Path to save the training set (optional)
     --help                    Display this help message
     
-    [?25h
+    
 
 
 ```python
