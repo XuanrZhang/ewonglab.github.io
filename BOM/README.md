@@ -73,33 +73,16 @@ dim(mouseE8.25)
 ```
 
 
-<style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>19291</li><li>18</li></ol>
-
 <span style="display: inline-block; padding-right: 5px;">19291</span>
 <span style="display: inline-block;">18</span>
 
 
-<style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>15504</li><li>4</li></ol>
+<span style="display: inline-block; padding-right: 5px;">15504</span>
+<span style="display: inline-block;">4</span>
 
 
-
-
-<style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>15504</li><li>4</li></ol>
+<span style="display: inline-block; padding-right: 5px;">15504</span>
+<span style="display: inline-block;">4</span>
 
 
 
