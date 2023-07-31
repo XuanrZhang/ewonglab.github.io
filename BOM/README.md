@@ -77,10 +77,11 @@ dim(mouseE8.25)
 .list-inline {list-style: none; margin:0; padding: 0}
 .list-inline>li {display: inline-block}
 .list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-<ol class=list-inline><li>19291</li><li>18</li></ol>
 </style>
+<ol class=list-inline><li>19291</li><li>18</li></ol>
 
-
+<span style="display: inline-block; padding-right: 5px;">19291</span>
+<span style="display: inline-block;">18</span>
 
 
 <style>
