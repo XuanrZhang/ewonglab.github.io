@@ -629,7 +629,7 @@ p
 
 
     
-![png](binary_tutorial_files/binary_tutorial_47_1.png)
+![png](binary_tutorial_files/images/binary_tutorial_47_1.png)
     
 
 
@@ -670,7 +670,7 @@ p
 
 
     
-![png](binary_tutorial_files/binary_tutorial_48_0.png)
+![png](binary_tutorial_files/images/binary_tutorial_48_0.png)
     
 
 
