@@ -848,7 +848,7 @@ Image("Cardiomyocytes_vs_other_SHAP_beeswarmv1.png", width=500, height=500)
 
 
     
-![png](binary_tutorial_files/binary_tutorial_61_0.png)
+![png](binary_tutorial_files/images/binary_tutorial_61_0.png)
     
 
 
@@ -881,7 +881,7 @@ Image("Cardiomyocytes_vs_other_SHAP_beeswarmv2.png", width=500, height=500)
 
 
     
-![png](binary_tutorial_files/binary_tutorial_64_0.png)
+![png](binary_tutorial_files/images/binary_tutorial_64_0.png)
     
 
 
@@ -969,7 +969,7 @@ Image("Cardiomyocytes_vs_other_bar1.png", width=500, height=500)
 
 
     
-![png](binary_tutorial_files/binary_tutorial_68_0.png)
+![png](binary_tutorial_files/images/binary_tutorial_68_0.png)
     
 
 
@@ -1038,7 +1038,7 @@ Image("1_39855911_39856411_waterfall.png", width=500, height=500)
 
 
     
-![png](binary_tutorial_files/binary_tutorial_72_0.png)
+![png](binary_tutorial_files/images/binary_tutorial_72_0.png)
     
 
 
@@ -1052,7 +1052,7 @@ Image("2_157923362_157923862_waterfall.png", width=500, height=500)
 
 
     
-![png](binary_tutorial_files/binary_tutorial_73_0.png)
+![png](binary_tutorial_files/images/binary_tutorial_73_0.png)
     
 
 
@@ -1066,7 +1066,7 @@ Image("9_23116275_23116775_waterfall.png", width=500, height=500)
 
 
     
-![png](binary_tutorial_files/binary_tutorial_74_0.png)
+![png](binary_tutorial_files/images/binary_tutorial_74_0.png)
     
 
 
