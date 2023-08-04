@@ -168,7 +168,7 @@ Image("Cardiomyocytes_vs_other_SHAP_beeswarmv1.png", width=500, height=500)
 
 
     
-![png](tutorial_interpretation_PC_XZ_files/tutorial_interpretation_PC_XZ_12_0.png)
+![png](binary_tutorial_files/images/tutorial_interpretation_PC_XZ_12_0.png)
     
 
 
@@ -186,7 +186,7 @@ Image("Cardiomyocytes_vs_other_SHAP_beeswarmv2.png", width=500, height=500)
 
 
     
-![png](tutorial_interpretation_PC_XZ_files/tutorial_interpretation_PC_XZ_13_0.png)
+![png](binary_tutorial_files/images/tutorial_interpretation_PC_XZ_13_0.png)
     
 
 
@@ -264,7 +264,7 @@ Image("Cardiomyocytes_vs_other_bar1.png", width=500, height=500)
 
 
     
-![png](tutorial_interpretation_PC_XZ_files/tutorial_interpretation_PC_XZ_16_0.png)
+![png](binary_tutorial_files/images/tutorial_interpretation_PC_XZ_16_0.png)
     
 
 
@@ -341,7 +341,7 @@ Image("1_39855911_39856411_waterfall.png", width=500, height=500)
 
 
     
-![png](tutorial_interpretation_PC_XZ_files/tutorial_interpretation_PC_XZ_21_0.png)
+![png](binary_tutorial_files/images/tutorial_interpretation_PC_XZ_21_0.png)
     
 
 
@@ -357,7 +357,7 @@ Image("2_157923362_157923862_waterfall.png", width=500, height=500)
 
 
     
-![png](tutorial_interpretation_PC_XZ_files/tutorial_interpretation_PC_XZ_23_0.png)
+![png](binary_tutorial_files/images/tutorial_interpretation_PC_XZ_23_0.png)
     
 
 
@@ -373,7 +373,7 @@ Image("9_23116275_23116775_waterfall.png", width=500, height=500)
 
 
     
-![png](tutorial_interpretation_PC_XZ_files/tutorial_interpretation_PC_XZ_25_0.png)
+![png](binary_tutorial_files/images/tutorial_interpretation_PC_XZ_25_0.png)
     
 
 
