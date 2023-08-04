@@ -311,7 +311,7 @@ Rscript train_binary.R --help
     --save_name=<file>		Name of the saved model file (default: xgboost.model)
     --help                    Display this help message
     
-    [?25h
+    
 
 Here is a **detailed example**, we set --early_stopping_rounds as 100 to stop model training when loss does not decrease after 100 iterations.
 
