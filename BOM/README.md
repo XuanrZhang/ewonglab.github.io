@@ -451,7 +451,7 @@ p
 
 
     
-![png](binary_tutorial_files/tutorial_model_PC_XZ_33_1.png)
+![png](binary_tutorial_files/images/tutorial_model_PC_XZ_33_1.png)
     
 
 
@@ -492,7 +492,7 @@ p
 
 
     
-![png](binary_tutorial_files/tutorial_model_PC_XZ_34_0.png)
+![png](binary_tutorial_files/images/tutorial_model_PC_XZ_34_0.png)
     
 
 
