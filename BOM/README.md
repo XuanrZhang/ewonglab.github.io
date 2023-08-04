@@ -115,8 +115,8 @@ Rscript filter_CREs.R \
     vignette('accessing_ensembl', package = 'biomaRt')Error in curl::curl_fetch_memory(url, handle = handle) : 
       SSL certificate problem: certificate has expired
     
-    [?25h[?25hReading CREs...
-    [?25h[?25h[?25hReading genome annotation...
+    Reading CREs...
+    Reading genome annotation...
     Import genomic features from the file as a GRanges object ... OK
     Prepare the 'metadata' data frame ... OK
     Make the TxDb object ... OK
@@ -126,11 +126,11 @@ Rscript filter_CREs.R \
     In .get_cds_IDX(mcols0$type, mcols0$phase) :
       The "phase" metadata column contains non-NA values for features of type
       stop_codon. This information was ignored.
-    [?25hReading chromosome sizes...
+    Reading chromosome sizes...
     Adjusting CRE length...
-    [?25hSaving CREs...
-    [?25h[?25h[?25hDone
-    [?25h[?25h
+    Saving CREs...
+    Done
+    
 
 For the next step, we will create a directory to save the filtered peaks into bed files. We will create the folder from the linux commnd line:
 mkdir bed_files
@@ -221,7 +221,7 @@ Required arguments:
 Rscript matrix_for_binary_model.R --help
 ```
 
-    [?25h[?25h[?25h[?25h[?25hUsage: Rscript matrix_for_binary_model.R [options]
+    Usage: Rscript matrix_for_binary_model.R [options]
     
     Options:
       --target_ct=<target_cell_type>    Name of the target cell type
@@ -229,7 +229,7 @@ Rscript matrix_for_binary_model.R --help
       --qval_thresh=<qvalue_threshold> Q-value threshold for filtering
       --out_filename=<output_filename> Name for the output file
       --help                           Display this help message
-    [?25h
+    
 
 Here, we provide a more detailed example of generating a matrix to distinguish cardiomyocyte-specific CRE from  CRE specific to other cell types. 
 
@@ -289,7 +289,7 @@ Use '--help' to display all the options.
 Rscript train_binary.R --help
 ```
 
-    [?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25hUsage: Rscript training_binary.R [options]
+    Usage: Rscript training_binary.R [options]
     Options:
     --input_data=<file>		Path to the input matrix of motif counts (required)
     --data=<data>			The training data (default: dtrain)
@@ -321,10 +321,10 @@ Here is a **detailed example**, we set --early_stopping_rounds as 100 to stop mo
 Rscript train_binary.R --input_data=Cardiomyocytes_vs_other_counts.txt --save_name=Cardiomyocytes_vs_other.rds --early_stopping_rounds=100 --print_every_n=100 --nthread=4
 ```
 
-    [?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25hReading data...
-    [?25h[?25h[?25h[?25h[?25h[?25hSplitting data into training, validation and test sets...
-    [?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25hTraining model...
-    [?25h[?25h[1]	train-error:0.149182	validation-error:0.195965 
+    Reading data...
+    Splitting data into training, validation and test sets...
+    Training model...
+    [1]	train-error:0.149182	validation-error:0.195965 
     Multiple eval metrics are present. Will use validation_error for early stopping.
     Will train until validation_error hasn't improved in 100 rounds.
     
@@ -335,9 +335,9 @@ Rscript train_binary.R --input_data=Cardiomyocytes_vs_other_counts.txt --save_na
     Stopping. Best iteration:
     [395]	train-error:0.014437	validation-error:0.031700
     
-    [?25hSaving model...
-    [?25h[?25hDone
-    [?25h[?25h
+    Saving model...
+    Done
+    
 
 ## Step_6 Model Predicting
 
@@ -354,7 +354,7 @@ Use '--help' to display all the options.
 Rscript predict_binary.R --help
 ```
 
-    [?25h[?25h[?25h[?25h[?25hUsage: Rscript xgboost_predictions.R [parameters]
+    Usage: Rscript xgboost_predictions.R [parameters]
     
     Parameters:
     --input_data=<file>       Path to the input data file
@@ -363,8 +363,7 @@ Rscript predict_binary.R --help
     --training_set=<file>     Path to save the training set (optional)
     --help                    Display this help message
     
-    [?25h
-
+    
 
 ```R
 Rscript predict_binary.R --input_data=Cardiomyocytes_vs_other_counts.txt --xgb_model=Cardiomyocytes_vs_other.rds --training_set=Cardiomyocytes_vs_other_train.txt --pred=Cardiomyocytes_vs_other_pred.txt
@@ -373,14 +372,14 @@ head Cardiomyocytes_vs_other_pred.txt
 
 ```
 
-    [?25h[?25h[?25h[?25h[?25h[?25h[?25hReading model...
-    [?25h[?25h[1] TRUE
-    [?25hBest tree: 395 
-    [?25hReading data...
-    [?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25hSaving training set...
-    [?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25hSaving predicted values...
-    [?25h[?25hDone
-    [?25h[?25htrue_class predicted_class prob
+    Reading model...
+    [1] TRUE
+    Best tree: 395 
+    Reading data...
+    Saving training set...
+    Saving predicted values...
+    Done
+    true_class predicted_class prob
     10:100164375-100164875 0 0 0.0236886981874704
     10:110994762-110995262 0 1 0.6538205742836
     10:111550213-111550713 0 0 0.23369137942791
@@ -403,15 +402,13 @@ Rscript binary_stats.R --input_file=Cardiomyocytes_vs_other_pred.txt
 ```
 
     Loading packages...
-    [?25h[1] "Cardiomyocytes_vs_other_pred.txt"
-    [?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25h[?25hauROC: 0.9938 
-    [?25hauPR: 0.9943 
-    [?25hAccuracy: 0.9597 
-    [?25hF1 score: 0.96 
-    [?25hRecall: 0.96 
-    [?25hPrecision: 0.96 
-    [?25h[?25h
-
+    auROC: 0.9938 
+    auPR: 0.9943 
+    Accuracy: 0.9597 
+    F1 score: 0.96 
+    Recall: 0.96 
+    Precision: 0.96 
+    
 ## Step_7 Prediction visualization
 
 The prediction metrics give us a good idea of the performance of the model but we can also visualize the predictions. We can, for instance, produce a ROC or PR curve. 
@@ -454,7 +451,7 @@ p
 
 
     
-![png](tutorial_model_PC_XZ_files/tutorial_model_PC_XZ_33_1.png)
+![png](binary_tutorial_files/tutorial_model_PC_XZ_33_1.png)
     
 
 
@@ -495,7 +492,7 @@ p
 
 
     
-![png](tutorial_model_PC_XZ_files/tutorial_model_PC_XZ_34_0.png)
+![png](binary_tutorial_files/tutorial_model_PC_XZ_34_0.png)
     
 
 
