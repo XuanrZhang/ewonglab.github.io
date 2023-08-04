@@ -9,6 +9,8 @@ SHAP values can be positive or negative indicating whether they influence the pr
 
 
 ### Create python environment and install dependencies
+
+```Shell
 python3 -m venv /path/to/shap_venv
 source /path/to/shap_venv/bin/activate
 pip install --upgrade pip
@@ -18,6 +20,8 @@ python3 -m pip install matplotlib
 python3 -m pip install numpy
 python3 -m pip install pandas
 python3 -m pip install shap
+```
+
 **Note that** all scripts should be executed from a linux command line, unless otherwise stated.
 
 Please activate python environment **shap_venv** and work on **/BOM/scripts/binary/** path
